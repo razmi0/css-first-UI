@@ -57,7 +57,7 @@ body {
   color: var(--font-1);
 }
 
-button:hover {
+.btn:hover {
   background-color: var(--bg-2);
   color: var(--font-2);
   box-shadow: none;

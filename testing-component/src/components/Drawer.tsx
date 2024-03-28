@@ -9,37 +9,31 @@ interface DrawerContentProps {
 const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>((props, ref) => {
   // console.log(typeof (<Handle />).type.toString()); // .test(/drawer-handle/g)
   return (
-    <>
-      {/* <div
-        aria-label="drawer"
-        className="fixed card shadow-sm overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bg-[#243342] rounded-tl-[0.75em] rounded-tr-[0.75em] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]"
-        tabIndex={0}
-      > */}
-      {/* <Drawer> */}
-      <div
-        className="fixed card shadow-sm overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bg-[#243342] rounded-tl-[0.75em] rounded-tr-[0.75em] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]"
-        tabIndex={0}
-      >
-        {props.handle && <Handle />}
-        <div ref={ref} className={`${props.className}`}>
-          <div aria-label="drawer-content" className="flex m-auto">
-            {props.children}
-          </div>
-        </div>
-        {/* </Drawer> */}
+    <div
+      tabIndex={0}
+      ref={ref}
+      className={`fixed overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)] ${props.className}`}
+    >
+      <div aria-label="drawer-content" className="flex m-auto">
+        {props.children}
       </div>
-    </>
+    </div>
   );
 });
 
-const Handle = () => (
+interface HandleProps {
+  className?: string;
+}
+
+const DrawerHandle = forwardRef<HTMLButtonElement, HandleProps>((props, ref) => (
   <>
     <button
       aria-label="drawer-handle"
-      className="bg-[#212121] h-2 w-28 m-auto block mt-4 mb-1 rounded-full card shadow-md"
+      ref={ref}
+      className={`absolute top-0  h-3 w-28 m-auto block mt-4 mb-1  ${props.className}`}
     />
   </>
-);
+));
 
 // const Drawer = (props: { children: ReactNode }) => {
 //   return (
@@ -51,10 +45,6 @@ const Handle = () => (
 //     </div>
 //   );
 // };
-
-const DrawerHandle = () => {
-  return <></>;
-};
 
 // const Drawer = (props: { children: ReactNode }) => {
 //   return (
