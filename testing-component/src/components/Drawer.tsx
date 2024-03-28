@@ -1,6 +1,13 @@
 import { ReactNode, forwardRef } from "react";
 
-const DrawerContent = (props: { children: ReactNode }) => {
+interface DrawerContentProps {
+  children: React.ReactNode;
+  className: string;
+  handle?: boolean;
+}
+
+const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>((props, ref) => {
+  // console.log(typeof (<Handle />).type.toString()); // .test(/drawer-handle/g)
   return (
     <>
       {/* <div
@@ -8,18 +15,22 @@ const DrawerContent = (props: { children: ReactNode }) => {
         className="fixed card shadow-sm overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bg-[#243342] rounded-tl-[0.75em] rounded-tr-[0.75em] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]"
         tabIndex={0}
       > */}
-      <Drawer>
-        <Handle />
-        <div className="h-[450px] flex items-center justify-center">
+      {/* <Drawer> */}
+      <div
+        className="fixed card shadow-sm overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bg-[#243342] rounded-tl-[0.75em] rounded-tr-[0.75em] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]"
+        tabIndex={0}
+      >
+        {props.handle && <Handle />}
+        <div ref={ref} className={`${props.className}`}>
           <div aria-label="drawer-content" className="flex m-auto">
             {props.children}
           </div>
         </div>
-      </Drawer>
-      {/* </div> */}
+        {/* </Drawer> */}
+      </div>
     </>
   );
-};
+});
 
 const Handle = () => (
   <>
@@ -30,16 +41,16 @@ const Handle = () => (
   </>
 );
 
-const Drawer = (props: { children: ReactNode }) => {
-  return (
-    <div
-      className="fixed card shadow-sm overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bg-[#243342] rounded-tl-[0.75em] rounded-tr-[0.75em] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]"
-      tabIndex={0}
-    >
-      {props.children}
-    </div>
-  );
-};
+// const Drawer = (props: { children: ReactNode }) => {
+//   return (
+//     <div
+//       className="fixed card shadow-sm overflow-hidden w-full transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)] bg-[#243342] rounded-tl-[0.75em] rounded-tr-[0.75em] bottom-0 right-0 focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]"
+//       tabIndex={0}
+//     >
+//       {props.children}
+//     </div>
+//   );
+// };
 
 const DrawerHandle = () => {
   return <></>;
