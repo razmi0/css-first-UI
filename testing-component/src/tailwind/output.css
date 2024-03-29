@@ -1130,6 +1130,18 @@ body {
   transition-timing-function: cubic-bezier(0.32,0.72,0,1);
 }
 
+.has-\[\+\:focus-within\]\:h-\[100vh\]:has(+:focus-within) {
+  height: 100vh;
+}
+
+.has-\[\+\:focus-within\]\:w-\[100vh\]:has(+:focus-within) {
+  width: 100vh;
+}
+
+.has-\[\+\:focus-within\]\:w-\[100vw\]:has(+:focus-within) {
+  width: 100vw;
+}
+
 @media (hover: hover) {
   .hover\:shadow-inner:hover {
     --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);

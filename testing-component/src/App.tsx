@@ -8,7 +8,7 @@ function App() {
       <ModalTrigger>Open modal</ModalTrigger>
       <div
         data-is="overlay"
-        className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40"
+        className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40 has-[+:focus-within]:w-[100vw] has-[+:focus-within]:h-[100vh] "
       ></div>
       <ModalContent>
         <Background type="mosaic" className="opacity-5" />
