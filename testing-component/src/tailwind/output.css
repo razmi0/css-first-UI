@@ -784,6 +784,10 @@ video {
   margin-top: 1rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -855,6 +859,14 @@ video {
 
 .w-40 {
   width: 10rem;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-1 {
+  width: 0.25rem;
 }
 
 .flex-grow {
@@ -1031,6 +1043,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1144,6 +1161,14 @@ video {
   transition-duration: 150ms;
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -1238,6 +1263,10 @@ body {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.focus-within\:transform-none:focus-within {
+  transform: none;
 }
 
 .focus-within\:opacity-100:focus-within {
@@ -1338,6 +1367,25 @@ body {
 }
 
 @media (hover: hover) {
+  .hover\:bg-\\\[\\\#212121cc\\\]:hover {
+    background-color: #212121cc;
+  }
+
+  .hover\:bg-\\\[\\\#292929\\\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(41 41 41 / var(--tw-bg-opacity));
+  }
+
+  .hover\:bg-white:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
+  .hover\:bg-neutral-800:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+  }
+
   .hover\:text-slate-300:hover {
     --tw-text-opacity: 1;
     color: rgb(203 213 225 / var(--tw-text-opacity));
