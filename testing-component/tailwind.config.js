@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/components/*.tsx","./src/tailwind" ,"./src/*.tsx", "./src/components/ui/*.tsx", "./src/components/ui/**/*.tsx"],
+  content: [
+    "./src/components/*.tsx",
+    "./src/tailwind",
+    "./src/*.tsx",
+    "./src/components/ui/*.tsx",
+    "./src/components/ui/**/*.tsx",
+  ],
   theme: {
     extend: {
       colors: {
@@ -46,13 +52,14 @@ export default {
     },
   },
   plugins: [
-    ({ addVariant }) => {
+    ({ addVariant, e }) => {
       addVariant("child", "& > *");
       addVariant("child-hover", "& > *:hover");
+      addVariant("child-focus", "& > *:focus");
     },
     ({ addVariant, e, postcss }) => {
       addVariant("hover", ({ container, separator }) => {
-        const hoverRule = postcss.atRule({ "name": "media", params: "(hover: hover)" });
+        const hoverRule = postcss.atRule({ name: "media", params: "(hover: hover)" });
         hoverRule.append(container.nodes);
         container.append(hoverRule);
         hoverRule.walkRules((rule) => {
@@ -66,7 +73,7 @@ export default {
           const value = colorObj[colorKey];
 
           const newVars =
-            typeof "value" === "string"
+            typeof value === "string"
               ? { [`--color${colorGroup}-${colorKey}`]: "value" }
               : extractColorVars("value", `-${colorKey}`);
 
