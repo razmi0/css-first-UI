@@ -6,39 +6,50 @@ function App() {
   return (
     <>
       <ModalTrigger>Open modal</ModalTrigger>
-      {/* <div
-        id="1"
-        className="fixed top-0 left-0 transform w-[100vw] h-[100vh] bg-black/40 flex items-center justify-center opacity-0 -z-50 peer-focus:opacity-100 peer-focus:z-50 focus:opacity-100 focus:z-50"
-        tabIndex={0}
-      > */}
+      <div
+        data-is="overlay"
+        className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40"
+      ></div>
       <ModalContent>
-        <div id="2" className="bg-slate-400 h-48 w-80 group-focus:bg-red-600 flex flex-col justify-between">
-          <h3>Modal Title</h3>
-          <small>Modal small</small>
-          <p>Modal content</p>
-          <input type="text" />
-          <button className="card btn ghost w-fit">Close</button>
+        <h3 className="text-xl">Modal Title</h3>
+        <small className="text-slate-400">Modal subtitle</small>
+        <p className="w-full my-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ullam aliquam perspiciatis sunt voluptate optio
+          sit labore, tempore amet illo dolor est iusto aliquid vero architecto maxime aut. Nemo, hic!
+        </p>
+        <label htmlFor="input" className="flex flex-col text-slate-400 text-sm font-semibold w-full justify-between">
+          Label
+        </label>
+        <div className="flex items-end h-10">
+          <input
+            type="text"
+            id="input"
+            className="h-full w-full text-black focus:outline-none rounded-tl-md rounded-bl-md bg-slate-200 pl-2 border border-[#254b6c6b]"
+          />
+          <button className="card btn ghost w-fit rounded-tl-none rounded-bl-none rounded-md">Close</button>
         </div>
       </ModalContent>
-      {/* </div> */}
     </>
   );
 }
 
 const ModalTrigger = (props: { children: ReactNode }) => (
-  <button className="peer ghost btn card group">{props.children}</button>
+  <button className="peer/modal-trigger ghost btn card">{props.children}</button>
 );
 
-const ModalContent = (props: { children: ReactNode }) => (
-  <div
-    id="1"
-    className="fixed top-0 left-0 transform w-[100vw] h-[100vh] bg-black/40 flex items-center justify-center opacity-0 -z-50 peer-focus:opacity-100 peer-focus:z-50 focus:opacity-100 focus:z-50"
-    tabIndex={0}
-  >
-    {props.children}
-  </div>
-);
-
+const ModalContent = (props: { children: ReactNode }) => {
+  const styles = `card px-3 py-2 bg-[#243342] rounded-md shadow-lg shadow-black`;
+  const atTheCenterStyles = `fixed top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%]`;
+  return (
+    <div
+      data-is="modal-content"
+      className={`${atTheCenterStyles} opacity-0 -z-50 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 focus-within:opacity-100 focus-within:z-50 ${styles}`}
+      tabIndex={0}
+    >
+      {props.children}
+    </div>
+  );
+};
 const DrawerExemple = () => {
   <Drawer>
     <DrawerTrigger className="card ghost btn">Open drawer</DrawerTrigger>
