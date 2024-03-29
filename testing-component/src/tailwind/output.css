@@ -1246,9 +1246,9 @@ body {
 
 /* ~ */
 
-[data-is="drawer-overlay"] ~ [data-is="drawer-content"] {
+/* [data-is="drawer-overlay"] [data-is="drawer-content"] {
   background-color: yellowgreen !important;
-}
+} */
 
 .focus-within\:z-50:focus-within {
   z-index: 50;
@@ -1328,41 +1328,6 @@ body {
 
 .has-\[\+\:focus-within\]\:w-\[100vw\]:has(+:focus-within) {
   width: 100vw;
-}
-
-.has-\[\+\[data-is\=\"content\"\]\]\:bg-white:has(+[data-is="content"]) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.has-\[\>\[data-is\=\"content\"\]\]\:bg-white:has(>[data-is="content"]) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.has-\[\+\:focus-within\[data-is\=\"content\"\]\]\:bg-white:has(+:focus-within[data-is="content"]) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.has-\[\+\[data-is\=\"content\"\]\:focus-within\]\:bg-white:has(+[data-is="content"]:focus-within) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.has-\[\+\[data-is\=\'content\'\]\:focus-within\]\:bg-white:has(+[data-is='content']:focus-within) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.has-\[\+\:focus-within\]\:bg-white:has(+:focus-within) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.has-\[\+\[data-is\=\"content\"\]\]\:text-red-500:has(+[data-is="content"]) {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 @media (hover: hover) {
