@@ -25,7 +25,7 @@ const DrawerExemple = () => {
   return (
     <Drawer>
       <DrawerTrigger className="hover:shadow-inner shadow-black card ghost btn ml-2">Open drawer</DrawerTrigger>
-      <DrawerOverlay className="bg-black/40 backdrop-blur-sm" />
+      {/* <DrawerOverlay className="bg-black/40 backdrop-blur-sm" /> */}
       <DrawerContent className="h-[450px] flex items-center justify-center shadow-sm bg-[#243342] rounded-tl-[0.5em] rounded-tr-[0.5em] card">
         <Background type="mosaic" className="opacity-5" />
         <DrawerHandle className="rounded-full card shadow-md bg-[#212121] hover:bg-neutral-800 transition-colors" />

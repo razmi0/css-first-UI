@@ -72,7 +72,7 @@ const ModalContent = forwardRef<HTMLDivElement, { children: ReactNode; className
         <div
           ref={ref}
           data-is="modal-content"
-          className={`fixed top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] opacity-0 -z-50 scale-0 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 peer-focus/modal-trigger:scale-100 focus-within:opacity-100 focus-within:z-50 focus-within:scale-100 ${className}`}
+          className={`fixed top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] opacity-0 -z-50 scale-90 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 peer-focus/modal-trigger:scale-100 focus-within:opacity-100 focus-within:z-50 focus-within:scale-100 transition-all ${className}`}
           tabIndex={0}
           {...props}
         >
