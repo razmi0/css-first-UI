@@ -52,7 +52,7 @@ body {
   user-select: none;
 }
 
-.btn.outline {
+.btn.ghost {
   background-color: transparent;
   color: var(--font-1);
 }
@@ -62,48 +62,6 @@ body {
   color: var(--font-2);
   box-shadow: none;
 }
-
-/* .drawer-container {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  bottom: 0;
-  transform: translate3d(0, 100%, 0);
-  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-  border-radius: 0.75em;
-  background-color: var(--bg-2);
-} */
-/* .drawer {
-  height: 450px;
-  display: flex;
-  place-items: center;
-  place-content: center;
-} */
-/* #drawer:focus ~ .drawer-container {
-  transform: translate3d(0, 0%, 0);
-  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-} */
-/* .drawer-container:focus {
-  transform: none;
-} */
-/* .handle {
-  background-color: #3f3e3ec5;
-  height: 0.5rem;
-  width: 100px;
-  margin: auto;
-  margin-top: 1rem;
-  border-radius: 9999px;
-  margin-bottom: 5px;
-  box-shadow: 0px 0px 5px #00000080;
-} */
-/* .drawer > .content {
-  display: flex;
-  margin: auto;
-} */
-/* 
-  /*  */
-/* 
-  /*  */
 
 .card {
   --tw-shadow-color: black;
