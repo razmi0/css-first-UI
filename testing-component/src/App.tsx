@@ -11,6 +11,7 @@ function App() {
         className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40"
       ></div>
       <ModalContent>
+        <Background type="mosaic" className="opacity-5" />
         <h3 className="text-xl">Modal Title</h3>
         <small className="text-slate-400">Modal subtitle</small>
         <p className="w-full my-5">
@@ -26,7 +27,7 @@ function App() {
             id="input"
             className="h-full w-full text-black focus:outline-none rounded-tl-md rounded-bl-md bg-slate-200 pl-2 border border-[#254b6c6b]"
           />
-          <button className="card btn ghost w-fit rounded-tl-none rounded-bl-none rounded-md">Close</button>
+          <button className="card btn ghost w-fit rounded-tl-none rounded-bl-none rounded-md">Submit</button>
         </div>
       </ModalContent>
     </>
