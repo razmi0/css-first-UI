@@ -1163,18 +1163,6 @@ body {
     0px 0px 0px 1px var(--tw-shadow-color);
 }
 
-/* *[data-is="modal-content"] button:has(:focus) {
-  color: green;
-} */
-
-/* [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
-  @apply hidden;
-} */
-
-/* [data-is="overlay"] + [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
-  background-color: red !important;
-} */
-
 .focus-within\:z-50:focus-within {
   z-index: 50;
 }
