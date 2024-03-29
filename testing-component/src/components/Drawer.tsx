@@ -33,7 +33,7 @@ const DrawerContent = forwardRef<HTMLDivElement, { children: ReactNode; classNam
 
 /**
  * TODO : find a way to close the overlay when clicking on a button[data-is="drawer-close"]
- * not ready
+ * not ready yet
  */
 const DrawerOverlay = forwardRef<HTMLDivElement, { className?: string }>(({ className, ...props }, ref) => {
   return (
