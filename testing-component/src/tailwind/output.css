@@ -1185,6 +1185,18 @@ video {
   transition-duration: 0.5s;
 }
 
+.duration-\[0\.2s\] {
+  transition-duration: 0.2s;
+}
+
+.duration-\[0\.1s\] {
+  transition-duration: 0.1s;
+}
+
+.duration-\[0\.15s\] {
+  transition-duration: 0.15s;
+}
+
 .ease-\[cubic-bezier\(0\.32\2c 0\.72\2c 0\2c 1\)\] {
   transition-timing-function: cubic-bezier(0.32,0.72,0,1);
 }
