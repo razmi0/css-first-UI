@@ -452,31 +452,131 @@ video {
   --color-transparent: value;
   --color-black: value;
   --color-white: value;
-  --color-slate: value;
-  --color-gray: value;
-  --color-zinc: value;
-  --color-neutral: value;
-  --color-stone: value;
-  --color-red: value;
-  --color-orange: value;
-  --color-amber: value;
-  --color-yellow: value;
-  --color-lime: value;
-  --color-green: value;
-  --color-emerald: value;
-  --color-teal: value;
-  --color-cyan: value;
-  --color-sky: value;
-  --color-blue: value;
-  --color-indigo: value;
-  --color-violet: value;
-  --color-purple: value;
-  --color-fuchsia: value;
-  --color-pink: value;
-  --color-rose: value;
-  --color-def: value;
-  --color-darkblue: value;
-  --color-card: value;
+  --color-slate-0: value;
+  --color-slate-1: value;
+  --color-slate-2: value;
+  --color-slate-3: value;
+  --color-slate-4: value;
+  --color-gray-0: value;
+  --color-gray-1: value;
+  --color-gray-2: value;
+  --color-gray-3: value;
+  --color-gray-4: value;
+  --color-zinc-0: value;
+  --color-zinc-1: value;
+  --color-zinc-2: value;
+  --color-zinc-3: value;
+  --color-zinc-4: value;
+  --color-neutral-0: value;
+  --color-neutral-1: value;
+  --color-neutral-2: value;
+  --color-neutral-3: value;
+  --color-neutral-4: value;
+  --color-stone-0: value;
+  --color-stone-1: value;
+  --color-stone-2: value;
+  --color-stone-3: value;
+  --color-stone-4: value;
+  --color-red-0: value;
+  --color-red-1: value;
+  --color-red-2: value;
+  --color-red-3: value;
+  --color-red-4: value;
+  --color-orange-0: value;
+  --color-orange-1: value;
+  --color-orange-2: value;
+  --color-orange-3: value;
+  --color-orange-4: value;
+  --color-amber-0: value;
+  --color-amber-1: value;
+  --color-amber-2: value;
+  --color-amber-3: value;
+  --color-amber-4: value;
+  --color-yellow-0: value;
+  --color-yellow-1: value;
+  --color-yellow-2: value;
+  --color-yellow-3: value;
+  --color-yellow-4: value;
+  --color-lime-0: value;
+  --color-lime-1: value;
+  --color-lime-2: value;
+  --color-lime-3: value;
+  --color-lime-4: value;
+  --color-green-0: value;
+  --color-green-1: value;
+  --color-green-2: value;
+  --color-green-3: value;
+  --color-green-4: value;
+  --color-emerald-0: value;
+  --color-emerald-1: value;
+  --color-emerald-2: value;
+  --color-emerald-3: value;
+  --color-emerald-4: value;
+  --color-teal-0: value;
+  --color-teal-1: value;
+  --color-teal-2: value;
+  --color-teal-3: value;
+  --color-teal-4: value;
+  --color-cyan-0: value;
+  --color-cyan-1: value;
+  --color-cyan-2: value;
+  --color-cyan-3: value;
+  --color-cyan-4: value;
+  --color-sky-0: value;
+  --color-sky-1: value;
+  --color-sky-2: value;
+  --color-sky-3: value;
+  --color-sky-4: value;
+  --color-blue-0: value;
+  --color-blue-1: value;
+  --color-blue-2: value;
+  --color-blue-3: value;
+  --color-blue-4: value;
+  --color-indigo-0: value;
+  --color-indigo-1: value;
+  --color-indigo-2: value;
+  --color-indigo-3: value;
+  --color-indigo-4: value;
+  --color-violet-0: value;
+  --color-violet-1: value;
+  --color-violet-2: value;
+  --color-violet-3: value;
+  --color-violet-4: value;
+  --color-purple-0: value;
+  --color-purple-1: value;
+  --color-purple-2: value;
+  --color-purple-3: value;
+  --color-purple-4: value;
+  --color-fuchsia-0: value;
+  --color-fuchsia-1: value;
+  --color-fuchsia-2: value;
+  --color-fuchsia-3: value;
+  --color-fuchsia-4: value;
+  --color-pink-0: value;
+  --color-pink-1: value;
+  --color-pink-2: value;
+  --color-pink-3: value;
+  --color-pink-4: value;
+  --color-rose-0: value;
+  --color-rose-1: value;
+  --color-rose-2: value;
+  --color-rose-3: value;
+  --color-rose-4: value;
+  --color-def-0: value;
+  --color-def-1: value;
+  --color-def-2: value;
+  --color-def-3: value;
+  --color-def-4: value;
+  --color-darkblue-0: value;
+  --color-darkblue-1: value;
+  --color-darkblue-2: value;
+  --color-darkblue-3: value;
+  --color-darkblue-4: value;
+  --color-card-0: value;
+  --color-card-1: value;
+  --color-card-2: value;
+  --color-card-3: value;
+  --color-card-4: value;
 }
 
 *, ::before, ::after {
@@ -595,6 +695,10 @@ video {
   visibility: visible;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .collapse {
   visibility: collapse;
 }
@@ -655,10 +759,6 @@ video {
   z-index: 50;
 }
 
-.z-10 {
-  z-index: 10;
-}
-
 .m-auto {
   margin: auto;
 }
@@ -670,6 +770,14 @@ video {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mt-4 {
@@ -702,6 +810,10 @@ video {
 
 .h-3 {
   height: 0.75rem;
+}
+
+.h-5 {
+  height: 1.25rem;
 }
 
 .h-\[450px\] {
@@ -845,32 +957,9 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-clip-padding {
-  background-clip: padding-box;
-}
-
-.bg-clip-content {
-  background-clip: content-box;
-}
-
-.bg-clip-text {
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .px-3 {
@@ -887,23 +976,9 @@ video {
   padding-left: 0.5rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 
 .text-xl {
@@ -927,14 +1002,6 @@ video {
 
 .underline {
   text-decoration-line: underline;
-}
-
-.decoration-slate-400 {
-  text-decoration-color: #94a3b8;
-}
-
-.underline-offset-8 {
-  text-underline-offset: 8px;
 }
 
 .antialiased {
@@ -990,10 +1057,20 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
 }
 
 .duration-\[0\.5s\] {
@@ -1002,6 +1079,10 @@ video {
 
 .ease-\[cubic-bezier\(0\.32\2c 0\.72\2c 0\2c 1\)\] {
   transition-timing-function: cubic-bezier(0.32,0.72,0,1);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :root {
@@ -1074,8 +1155,24 @@ body {
     0px 0px 0px 1px var(--tw-shadow-color);
 }
 
+/* *[data-is="modal-content"] button:has(:focus) {
+  color: green;
+} */
+
+[data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
+  display: none;
+}
+
+/* [data-is="overlay"] + [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
+  background-color: red !important;
+} */
+
 .focus-within\:z-50:focus-within {
   z-index: 50;
+}
+
+.focus-within\:block:focus-within {
+  display: block;
 }
 
 .focus-within\:opacity-100:focus-within {
@@ -1091,8 +1188,16 @@ body {
   outline-offset: 2px;
 }
 
+.peer\/modal-trigger:focus ~ .peer-focus\/modal-trigger\:visible {
+  visibility: visible;
+}
+
 .peer\/modal-trigger:focus ~ .peer-focus\/modal-trigger\:z-50 {
   z-index: 50;
+}
+
+.peer\/modal-trigger:focus ~ .peer-focus\/modal-trigger\:block {
+  display: block;
 }
 
 .peer\/modal-trigger:focus ~ .peer-focus\/modal-trigger\:h-\[100vh\] {
@@ -1134,15 +1239,16 @@ body {
   height: 100vh;
 }
 
-.has-\[\+\:focus-within\]\:w-\[100vh\]:has(+:focus-within) {
-  width: 100vh;
-}
-
 .has-\[\+\:focus-within\]\:w-\[100vw\]:has(+:focus-within) {
   width: 100vw;
 }
 
 @media (hover: hover) {
+  .hover\:text-slate-300:hover {
+    --tw-text-opacity: 1;
+    color: rgb(203 213 225 / var(--tw-text-opacity));
+  }
+
   .hover\:shadow-inner:hover {
     --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
     --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);

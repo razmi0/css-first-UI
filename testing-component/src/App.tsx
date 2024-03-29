@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { forwardRef, type ReactNode } from "react";
 import Background from "./components/Backgrounds";
 import { Drawer, DrawerContent, DrawerHandle, DrawerItem, DrawerTrigger } from "./components/Drawer";
 
@@ -11,6 +11,7 @@ function App() {
         className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40 has-[+:focus-within]:w-[100vw] has-[+:focus-within]:h-[100vh] "
       ></div>
       <ModalContent>
+        <ModalCloseCross />
         <Background type="mosaic" className="opacity-5" />
         <h3 className="text-xl">Modal Title</h3>
         <small className="text-slate-400">Modal subtitle</small>
@@ -27,12 +28,36 @@ function App() {
             id="input"
             className="h-full w-full text-black focus:outline-none rounded-tl-md rounded-bl-md bg-slate-200 pl-2 border border-[#254b6c6b]"
           />
-          <button className="card btn ghost w-fit rounded-tl-none rounded-bl-none rounded-md">Submit</button>
+          <button className="card btn ghost w-fit rounded-tl-none rounded-bl-none rounded-md " data-is="close-modal">
+            Submit
+          </button>
         </div>
       </ModalContent>
     </>
   );
 }
+
+interface ModalCloseProps extends React.SVGProps<SVGSVGElement> {
+  className?: string; // Optional className prop for the button
+}
+
+const ModalCloseCross = forwardRef<SVGSVGElement, ModalCloseProps>((props, ref) => {
+  return (
+    <button className="absolute top-0 right-0 mt-2 mr-2" data-is="close-modal">
+      <svg
+        ref={ref}
+        xmlns="http://www.w3.org/2000/svg"
+        className={`h-5 text-slate-400 hover:text-slate-300 transition-colors duration-200 ease-in-out ${props.className}`}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        {...props}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  );
+});
 
 const ModalTrigger = (props: { children: ReactNode }) => (
   <button className="peer/modal-trigger ghost btn card">{props.children}</button>
@@ -44,9 +69,13 @@ const ModalContent = (props: { children: ReactNode }) => {
   return (
     <div
       data-is="modal-content"
-      className={`${atTheCenterStyles} opacity-0 -z-50 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 focus-within:opacity-100 focus-within:z-50 ${styles}`}
+      className={`${atTheCenterStyles} opacity-0 -z-50  peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 focus-within:opacity-100 focus-within:z-50 ${styles}`} //  //hidden peer-focus/modal-trigger:block focus-within:block
       tabIndex={0}
     >
+      <style>{`
+        [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
+          @apply hidden;
+        }`}</style>
       {props.children}
     </div>
   );
