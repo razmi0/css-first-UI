@@ -1,11 +1,12 @@
 import Background from "./components/Backgrounds";
 import { Drawer, DrawerContent, DrawerHandle, DrawerTrigger } from "./components/Drawer";
 import { Modal, ModalCloseTrigger, ModalContent, ModalCross, ModalOverlay, ModalTrigger } from "./components/Modal";
+import RainbowHeader from "./components/RainbowHeader";
 
 function App() {
   return (
     <>
-      <div className="h-20 w-20 bg-white absolute top-0"></div>
+      <RainbowHeader />
       <ModalExemple />
       <DrawerExemple />
     </>
