@@ -7,7 +7,7 @@ interface DrawerTriggerProps {
 
 const DrawerTrigger = forwardRef<HTMLButtonElement, DrawerTriggerProps>(({ children, className }, ref) => {
   return (
-    <button ref={ref} aria-label="Open drawer" className={`peer/drawer hover:shadow-inner shadow-black ${className}`}>
+    <button ref={ref} aria-label="Open drawer" className={`peer/drawer ${className}`}>
       {children}
     </button>
   );
@@ -16,7 +16,7 @@ const DrawerTrigger = forwardRef<HTMLButtonElement, DrawerTriggerProps>(({ child
 const DrawerContent = forwardRef<HTMLDivElement, { children: ReactNode; className?: string }>(
   ({ className, children, ...props }, ref) => {
     const transforms = `transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)]`;
-    const peer = `focus-within:transform-none peer-focus/drawer:transform peer-focus/drawer:translate-y-0 peer-focus/drawer:transition-transform peer-focus/drawer:duration-[0.5s] peer-focus/drawer:ease-[cubic-bezier(0.32,0.72,0,1)]`;
+    const peer = `focus-within:transform-none peer-focus/drawer:translate-y-0 peer-focus/drawer:transition-transform peer-focus/drawer:duration-[0.5s] peer-focus/drawer:ease-[cubic-bezier(0.32,0.72,0,1)]`;
     return (
       <div
         data-is="drawer-content"
@@ -31,6 +31,9 @@ const DrawerContent = forwardRef<HTMLDivElement, { children: ReactNode; classNam
   }
 );
 
+/**
+ * TODO : find a way to close the overlay when clicking on a button[data-is="drawer-close"]
+ */
 const DrawerOverlay = forwardRef<HTMLDivElement, { className?: string }>(({ className, ...props }, ref) => {
   return (
     <div

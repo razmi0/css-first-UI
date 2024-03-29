@@ -1,6 +1,13 @@
 import { ReactNode, forwardRef } from "react";
 import Background from "./components/Backgrounds";
-import { Drawer, DrawerCloseTrigger, DrawerContent, DrawerHandle, DrawerTrigger } from "./components/Drawer";
+import {
+  Drawer,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerHandle,
+  DrawerOverlay,
+  DrawerTrigger,
+} from "./components/Drawer";
 import { Modal, ModalCloseTrigger, ModalContent, ModalCross, ModalOverlay, ModalTrigger } from "./components/Modal";
 import RainbowHeader from "./components/RainbowHeader";
 
@@ -17,8 +24,8 @@ function App() {
 const DrawerExemple = () => {
   return (
     <Drawer>
-      <DrawerTrigger className="card ghost btn ml-2">Open drawer</DrawerTrigger>
-      {/* <DrawerOverlay className="bg-black/40 backdrop-blur-sm" /> */}
+      <DrawerTrigger className="hover:shadow-inner shadow-black card ghost btn ml-2">Open drawer</DrawerTrigger>
+      <DrawerOverlay className="bg-black/40 backdrop-blur-sm" />
       <DrawerContent className="h-[450px] flex items-center justify-center shadow-sm bg-[#243342] rounded-tl-[0.5em] rounded-tr-[0.5em] card">
         <Background type="mosaic" className="opacity-5" />
         <DrawerHandle className="rounded-full card shadow-md bg-[#212121] hover:bg-neutral-800 transition-colors" />
@@ -39,12 +46,14 @@ const ModalExemple = () => {
     <Modal>
       <ModalTrigger className="ghost btn card">Open modal</ModalTrigger>
       <ModalOverlay className="bg-black/40 backdrop-blur-sm" />
-      <ModalContent className="card px-3 py-2 bg-[#243342] rounded-md shadow-lg shadow-black">
+      <ModalContent className="card px-4 py-3 bg-[#243342] rounded-md shadow-lg shadow-black">
         <Background type="mosaic" className="opacity-5" />
         <ModalCross />
         <LoremContent />
         <div className="flex flex-row-reverse">
-          <ModalCloseTrigger className="card btn ghost w-fit rounded-md relative mt-3">Close</ModalCloseTrigger>
+          <ModalCloseTrigger className="card btn ghost w-fit rounded-md relative mt-3">
+            <span className="px-12">Close</span>
+          </ModalCloseTrigger>
         </div>
       </ModalContent>
     </Modal>

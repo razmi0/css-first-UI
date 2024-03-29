@@ -71,3 +71,14 @@ body {
   --tw-shadow-colored: inset 0px 1px 0px 0px var(--tw-shadow-color), inset 0px 0px 0px 1px var(--tw-shadow-color),
     0px 0px 0px 1px var(--tw-shadow-color);
 }
+
+/* [data-is="drawer-content"]:has(button[data-is="drawer-close"]:focus) {
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+} */
+
+/* ~ */
+
+[data-is="drawer-overlay"] ~ [data-is="drawer-content"] {
+  background-color: yellowgreen !important;
+}
