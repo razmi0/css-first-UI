@@ -69,7 +69,7 @@ const ModalContent = (props: { children: ReactNode }) => {
   return (
     <div
       data-is="modal-content"
-      className={`${atTheCenterStyles} opacity-0 -z-50  peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 focus-within:opacity-100 focus-within:z-50 ${styles}`} //  //hidden peer-focus/modal-trigger:block focus-within:block
+      className={`${atTheCenterStyles} opacity-0 -z-50 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 focus-within:opacity-100 focus-within:z-50 ${styles}`} //  //hidden peer-focus/modal-trigger:block focus-within:block
       tabIndex={0}
     >
       <style>{`
