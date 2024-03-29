@@ -28,12 +28,6 @@ const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>((props, ref
       ref={ref}
       className={`fixed overflow-hidden w-full bottom-0 right-0 ${transforms} ${peer} ${props.className}`}
     >
-      {/*  */}
-      {/*  */}
-      {/*  */}
-
-      {/*  */}
-      {/*  */}
       {props.children}
     </div>
   );
@@ -53,16 +47,8 @@ const DrawerHandle = forwardRef<HTMLButtonElement, HandleProps>((props, ref) => 
   </>
 ));
 
-const DrawerItem = (props: { children: ReactNode }) => {
-  return (
-    <>
-      <div className="flex items-center justify-center">{props.children}</div>
-    </>
-  );
-};
-
 const Drawer = (props: { children: ReactNode }) => {
   return <>{props.children}</>;
 };
 
-export { Drawer, DrawerContent, DrawerHandle, DrawerItem, DrawerTrigger };
+export { Drawer, DrawerContent, DrawerHandle, DrawerTrigger };

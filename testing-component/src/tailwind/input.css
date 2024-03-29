@@ -19,7 +19,7 @@
   --bg-1: #213547;
   --bg-2: #243342;
   --font-1: #f5f5f5;
-  --font-2: #bebbbb;
+  --font-2: #ebe9e9;
 }
 
 *,
@@ -53,12 +53,12 @@ body {
 
 .btn.ghost {
   background-color: transparent;
-  color: var(--font-1);
+  color: var(--font-2);
 }
 
 .btn:hover {
   background-color: var(--bg-2);
-  color: var(--font-2);
+  color: var(--font-1);
   box-shadow: none;
 }
 
