@@ -7,7 +7,7 @@ interface DrawerTriggerProps {
 
 const DrawerTrigger = forwardRef<HTMLButtonElement, DrawerTriggerProps>(({ children, className }, ref) => {
   return (
-    <button ref={ref} aria-label="Open drawer" className={`peer hover:shadow-inner shadow-black ${className}`}>
+    <button ref={ref} aria-label="Open drawer" className={`peer/drawer hover:shadow-inner shadow-black ${className}`}>
       {children}
     </button>
   );
@@ -21,7 +21,7 @@ interface DrawerContentProps {
 
 const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>((props, ref) => {
   const transforms = `transform translate-y-[100%] duration-[0.5s] ease-[cubic-bezier(0.32,0.72,0,1)]`;
-  const peer = `focus:transform-none peer-focus:transform peer-focus:translate-y-0 peer-focus:transition-transform peer-focus:duration-[0.5s] peer-focus:ease-[cubic-bezier(0.32,0.72,0,1)]`;
+  const peer = `focus:transform-none peer-focus/drawer:transform peer-focus/drawer:translate-y-0 peer-focus/drawer:transition-transform peer-focus/drawer:duration-[0.5s] peer-focus/drawer:ease-[cubic-bezier(0.32,0.72,0,1)]`;
   return (
     <div
       tabIndex={0}
@@ -33,6 +33,16 @@ const DrawerContent = forwardRef<HTMLDivElement, DrawerContentProps>((props, ref
   );
 });
 
+const DrawerOverlay = forwardRef<HTMLDivElement, { className?: string }>(({ className, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      data-is="overlay"
+      className={`fixed top-0 left-0 peer-focus/drawer:w-[100vw] peer-focus/drawer:h-[100vh] has-[+:focus-within]:w-[100vw] has-[+:focus-within]:h-[100vh] ${className}`}
+      {...props}
+    ></div>
+  );
+});
 interface HandleProps {
   className?: string;
 }
@@ -51,4 +61,4 @@ const Drawer = (props: { children: ReactNode }) => {
   return <>{props.children}</>;
 };
 
-export { Drawer, DrawerContent, DrawerHandle, DrawerTrigger };
+export { Drawer, DrawerContent, DrawerHandle, DrawerOverlay, DrawerTrigger };

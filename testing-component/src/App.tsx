@@ -1,5 +1,5 @@
 import Background from "./components/Backgrounds";
-import { Drawer, DrawerContent, DrawerHandle, DrawerTrigger } from "./components/Drawer";
+import { Drawer, DrawerContent, DrawerHandle, DrawerOverlay, DrawerTrigger } from "./components/Drawer";
 import { Modal, ModalCloseTrigger, ModalContent, ModalCross, ModalOverlay, ModalTrigger } from "./components/Modal";
 import RainbowHeader from "./components/RainbowHeader";
 
@@ -17,6 +17,7 @@ const DrawerExemple = () => {
   return (
     <Drawer>
       <DrawerTrigger className="card ghost btn">Open drawer</DrawerTrigger>
+      <DrawerOverlay className="bg-black/40 backdrop-blur-sm" />
       <DrawerContent className="h-[450px] flex items-center justify-center shadow-sm bg-[#243342] rounded-tl-[0.5em] rounded-tr-[0.5em] card">
         <Background type="mosaic" className="opacity-5" />
         <DrawerHandle className="rounded-full card shadow-md bg-[#212121]" />

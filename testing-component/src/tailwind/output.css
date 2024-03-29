@@ -1261,11 +1261,24 @@ body {
   height: 100vh;
 }
 
+.peer\/drawer:focus ~ .peer-focus\/drawer\:h-\[100vh\] {
+  height: 100vh;
+}
+
 .peer\/modal-trigger:focus ~ .peer-focus\/modal-trigger\:w-\[100vw\] {
   width: 100vw;
 }
 
+.peer\/drawer:focus ~ .peer-focus\/drawer\:w-\[100vw\] {
+  width: 100vw;
+}
+
 .peer:focus ~ .peer-focus\:translate-y-0 {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.peer\/drawer:focus ~ .peer-focus\/drawer\:translate-y-0 {
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1280,6 +1293,10 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.peer\/drawer:focus ~ .peer-focus\/drawer\:transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .peer\/modal-trigger:focus ~ .peer-focus\/modal-trigger\:opacity-100 {
   opacity: 1;
 }
@@ -1290,11 +1307,25 @@ body {
   transition-duration: 150ms;
 }
 
+.peer\/drawer:focus ~ .peer-focus\/drawer\:transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .peer:focus ~ .peer-focus\:duration-\[0\.5s\] {
   transition-duration: 0.5s;
 }
 
+.peer\/drawer:focus ~ .peer-focus\/drawer\:duration-\[0\.5s\] {
+  transition-duration: 0.5s;
+}
+
 .peer:focus ~ .peer-focus\:ease-\[cubic-bezier\(0\.32\2c 0\.72\2c 0\2c 1\)\] {
+  transition-timing-function: cubic-bezier(0.32,0.72,0,1);
+}
+
+.peer\/drawer:focus ~ .peer-focus\/drawer\:ease-\[cubic-bezier\(0\.32\2c 0\.72\2c 0\2c 1\)\] {
   transition-timing-function: cubic-bezier(0.32,0.72,0,1);
 }
 
