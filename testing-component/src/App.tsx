@@ -4,11 +4,7 @@ import { Drawer, DrawerContent, DrawerHandle, DrawerItem, DrawerTrigger } from "
 
 function App() {
   return (
-    <>
-      <style>{`
-          [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
-            @apply hidden;
-          }`}</style>
+    <Modal>
       <ModalTrigger>Open modal</ModalTrigger>
       <ModalOverlay />
       <ModalContent>
@@ -34,13 +30,27 @@ function App() {
           </button>
         </div>
       </ModalContent>
-    </>
+    </Modal>
   );
 }
 
 interface ModalCloseProps extends React.SVGProps<SVGSVGElement> {
-  className?: string; // Optional className prop for the button
+  className?: string;
 }
+
+const Modal = (props: { children: ReactNode }) => {
+  return (
+    <>
+      <style>
+        {`
+        [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
+          display : none;
+        }`}
+      </style>
+      {props.children}
+    </>
+  );
+};
 
 const ModalOverlay = () => {
   return (
@@ -73,6 +83,10 @@ const ModalTrigger = (props: { children: ReactNode }) => (
   <button className="peer/modal-trigger ghost btn card">{props.children}</button>
 );
 
+const ModalClose = (props: { children: ReactNode }) => {
+  return <>{props.children}</>;
+};
+
 const ModalContent = (props: { children: ReactNode }) => {
   const styles = `card px-3 py-2 bg-[#243342] rounded-md shadow-lg shadow-black`;
   const atTheCenterStyles = `fixed top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%]`;
@@ -88,6 +102,7 @@ const ModalContent = (props: { children: ReactNode }) => {
     </>
   );
 };
+
 const DrawerExemple = () => {
   <Drawer>
     <DrawerTrigger className="card ghost btn">Open drawer</DrawerTrigger>

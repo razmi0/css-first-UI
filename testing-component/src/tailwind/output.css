@@ -1167,9 +1167,9 @@ body {
   color: green;
 } */
 
-[data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
-  display: none;
-}
+/* [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
+  @apply hidden;
+} */
 
 /* [data-is="overlay"] + [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
   background-color: red !important;
