@@ -5,11 +5,12 @@ import { Drawer, DrawerContent, DrawerHandle, DrawerItem, DrawerTrigger } from "
 function App() {
   return (
     <>
+      <style>{`
+          [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
+            @apply hidden;
+          }`}</style>
       <ModalTrigger>Open modal</ModalTrigger>
-      <div
-        data-is="overlay"
-        className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40 has-[+:focus-within]:w-[100vw] has-[+:focus-within]:h-[100vh] "
-      ></div>
+      <ModalOverlay />
       <ModalContent>
         <ModalCloseCross />
         <Background type="mosaic" className="opacity-5" />
@@ -41,6 +42,15 @@ interface ModalCloseProps extends React.SVGProps<SVGSVGElement> {
   className?: string; // Optional className prop for the button
 }
 
+const ModalOverlay = () => {
+  return (
+    <div
+      data-is="overlay"
+      className="fixed top-0 left-0 peer-focus/modal-trigger:w-[100vw] peer-focus/modal-trigger:h-[100vh] bg-black/40 has-[+:focus-within]:w-[100vw] has-[+:focus-within]:h-[100vh] "
+    ></div>
+  );
+};
+
 const ModalCloseCross = forwardRef<SVGSVGElement, ModalCloseProps>((props, ref) => {
   return (
     <button className="absolute top-0 right-0 mt-2 mr-2" data-is="close-modal">
@@ -67,17 +77,15 @@ const ModalContent = (props: { children: ReactNode }) => {
   const styles = `card px-3 py-2 bg-[#243342] rounded-md shadow-lg shadow-black`;
   const atTheCenterStyles = `fixed top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%]`;
   return (
-    <div
-      data-is="modal-content"
-      className={`${atTheCenterStyles} opacity-0 -z-50 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 focus-within:opacity-100 focus-within:z-50 ${styles}`} //  //hidden peer-focus/modal-trigger:block focus-within:block
-      tabIndex={0}
-    >
-      <style>{`
-        [data-is="modal-content"]:has(button[data-is="close-modal"]:focus) {
-          @apply hidden;
-        }`}</style>
-      {props.children}
-    </div>
+    <>
+      <div
+        data-is="modal-content"
+        className={`${atTheCenterStyles} opacity-0 -z-50 scale-0 peer-focus/modal-trigger:opacity-100 peer-focus/modal-trigger:z-50 peer-focus/modal-trigger:scale-100 focus-within:opacity-100 focus-within:z-50 focus-within:scale-100 ${styles}`} //  //hidden peer-focus/modal-trigger:block focus-within:block
+        tabIndex={0}
+      >
+        {props.children}
+      </div>
+    </>
   );
 };
 const DrawerExemple = () => {
