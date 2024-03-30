@@ -1,13 +1,6 @@
 import { ReactNode, forwardRef } from "react";
 import Background from "./components/Backgrounds";
-import {
-  Drawer,
-  DrawerCloseTrigger,
-  DrawerContent,
-  DrawerHandle,
-  DrawerOverlay,
-  DrawerTrigger,
-} from "./components/Drawer";
+import { Drawer, DrawerCloseTrigger, DrawerContent, DrawerHandle, DrawerTrigger } from "./components/Drawer";
 import { Modal, ModalCloseTrigger, ModalContent, ModalCross, ModalOverlay, ModalTrigger } from "./components/Modal";
 import RainbowHeader from "./components/RainbowHeader";
 
