@@ -35,6 +35,7 @@ const DrawerContent = forwardRef<HTMLDivElement, { children: ReactNode; classNam
  * TODO : find a way to close the overlay when clicking on a button[data-is="drawer-close"]
  * not ready yet
  */
+// @ts-ignore : TODO
 const DrawerOverlay = forwardRef<HTMLDivElement, { className?: string }>(({ className, ...props }, ref) => {
   return (
     <div
@@ -49,7 +50,8 @@ const DrawerOverlay = forwardRef<HTMLDivElement, { className?: string }>(({ clas
 const DrawerHandle = forwardRef<HTMLButtonElement, { className?: string }>((props, ref) => (
   <>
     <button
-      data-is="drawer-close"
+      // data-is="drawer-close"
+      data-action="drawer-handle"
       ref={ref}
       className={`absolute top-0 h-3 w-28 m-auto block mt-4 mb-1 ${props.className}`}
     />
@@ -72,11 +74,17 @@ const Drawer = (props: { children: ReactNode }) => {
           [data-is="drawer-content"]:has(button[data-is="drawer-close"]:focus) {
             transform: translateY(100%);
             transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-          }`}
+          }
+
+          [data-is="drawer-content"]:has([data-action="drawer-handle"]:focus) {
+            height: 100% !important;
+            transition: height 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+          }
+        `}
       </style>
       {props.children}
     </>
   );
 };
 
-export { Drawer, DrawerCloseTrigger, DrawerContent, DrawerHandle, DrawerOverlay, DrawerTrigger };
+export { Drawer, DrawerCloseTrigger, DrawerContent, DrawerHandle, DrawerTrigger };
