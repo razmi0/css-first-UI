@@ -8,5 +8,14 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-unused-vars": "off",
     "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+    "@typescript-eslint/ban-ts-comment": [
+      "warn",
+      {
+        "ts-ignore": "allow-with-description",
+        "ts-expect-error": "allow-with-description",
+        "ts-nocheck": "allow-with-description",
+        "ts-check": "allow-with-description",
+      },
+    ],
   },
 };
