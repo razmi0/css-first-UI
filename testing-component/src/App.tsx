@@ -20,7 +20,7 @@ const DrawerExemple = () => {
       <DrawerTrigger className="hover:shadow-inner shadow-black card ghost btn ml-2">Open drawer</DrawerTrigger>
       {/* <DrawerOverlay className="bg-black/40 backdrop-blur-sm" /> */}
       <DrawerContent className="h-[450px] flex items-center justify-center shadow-sm bg-[#243342] rounded-tl-[0.5em] rounded-tr-[0.5em] card">
-        <Background type="mosaic" className="opacity-5" />
+        <Background type="Mosaic" className="opacity-5" />
         <DrawerHandle className="rounded-full card shadow-md bg-[#212121] hover:bg-neutral-800 transition-colors" />
         <LoremContent className="flex flex-col w-1/2">
           <div className="flex flex-row-reverse">
@@ -40,7 +40,7 @@ const ModalExemple = () => {
       <ModalTrigger className="ghost btn card">Open modal</ModalTrigger>
       <ModalOverlay className="bg-black/40 backdrop-blur-sm" />
       <ModalContent className="card px-4 py-3 bg-[#243342] rounded-md shadow-lg shadow-black">
-        <Background type="mosaic" className="opacity-5" />
+        <Background type="Mosaic" className="opacity-5" />
         <ModalCross />
         <LoremContent />
         <div className="flex flex-row-reverse">

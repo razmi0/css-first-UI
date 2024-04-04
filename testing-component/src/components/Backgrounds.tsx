@@ -23,7 +23,7 @@ type BackgroundType =
   | "diag";
 interface BackgroundProps {
   className?: string;
-  type: BackgroundType;
+  type: Capitalize<BackgroundType>;
   extension?: string;
 }
 
