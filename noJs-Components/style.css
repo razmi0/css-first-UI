@@ -81,6 +81,84 @@ button:hover {
 /* 
 /*  */
 
+body {
+  container-type: size;
+  container-name: body-pill;
+}
+
+/* SM */
+@container body-pill (width < 768px) {
+  .debug-screen-pill > span:nth-of-type(4):after {
+    content: "SM";
+  }
+
+  /* FIRST SPAN :BEFORE ELEMENT*/
+  .debug-screen-pill > span:nth-of-type(1):before {
+    content: "<768";
+  }
+
+  /* THIRD SPAN :BEFORE ELEMENT*/
+  .debug-screen-pill > span:nth-of-type(3):before {
+    content: "?";
+  }
+}
+
+/* MD */
+@container body-pill (width > 768px) {
+  .debug-screen-pill > span:nth-of-type(4):after {
+    content: "MD";
+  }
+
+  /* FIRST SPAN :BEFORE ELEMENT*/
+  .debug-screen-pill > span:nth-of-type(1):before {
+    content: ">768";
+  }
+
+  /* THIRD SPAN :BEFORE ELEMENT*/
+  .debug-screen-pill > span:nth-of-type(3):before {
+    content: "?";
+  }
+}
+
+/* LG */
+@container body-pill (width > 1024px) {
+  .debug-screen-pill > span:nth-of-type(4):after {
+    content: "LG";
+  }
+  .debug-screen-pill > span:nth-of-type(1):before {
+    content: ">1024";
+  }
+  .debug-screen-pill > span:nth-of-type(3):before {
+    content: "?";
+  }
+}
+
+/* XL */
+@container body-pill (width > 1280px) {
+  .debug-screen-pill > span:nth-of-type(4):after {
+    content: "XL";
+  }
+  .debug-screen-pill > span:nth-of-type(1):before {
+    content: ">1280";
+  }
+  .debug-screen-pill > span:nth-of-type(3):before {
+    content: "?";
+  }
+}
+
+/* 2XL */
+@container body-pill (width > 1536px) {
+  .debug-screen-pill > span:nth-of-type(4):after {
+    content: "2XL";
+  }
+  .debug-screen-pill > span:nth-of-type(1):before {
+    content: ">1536";
+  }
+  .debug-screen-pill > span:nth-of-type(3):before {
+    content: "?";
+  }
+}
+
 /* WRAPPER */
 .debug-screen-pill {
   position: fixed;
@@ -111,29 +189,29 @@ button:hover {
 }
 
 /* FIRST SPAN :BEFORE ELEMENT*/
-.debug-screen-pill > span:nth-of-type(1):before {
+/* .debug-screen-pill > span:nth-of-type(1):before {
   content: "123";
-}
+} */
 
 /* THIRD SPAN :BEFORE ELEMENT*/
-.debug-screen-pill > span:nth-of-type(3):before {
+/* .debug-screen-pill > span:nth-of-type(3):before {
   content: "321";
-}
+} */
 
 /* LAST SPAN :BEFORE ELEMENT */
-.debug-screen-pill > span:nth-of-type(4):before {
+/* .debug-screen-pill > span:nth-of-type(4):before {
   content: "XL";
-}
+} */
 
 /* THIRD SPAN, :AFTER ELEMENT */
-.debug-screen-pill > span:nth-of-type(3):after {
+.debug-screen-pill > span:nth-of-type(4):before {
   content: "";
   position: absolute;
   height: 100%;
   top: 0;
   width: 1px;
   background: #242424;
-  transform: translateX(250%);
+  transform: translateX(-500%);
 }
 
 /* LAST SPAN */
