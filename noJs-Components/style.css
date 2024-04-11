@@ -27,9 +27,9 @@
 }
 
 body {
-  display: flex;
-  place-content: center;
-  place-items: center;
+  /* display: flex; */
+  /* place-content: center; */
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
   background-color: #242424;
@@ -80,3 +80,63 @@ button:hover {
 /*  */
 /* 
 /*  */
+
+/* WRAPPER */
+.debug-screen-pill {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 50;
+  /* */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 0rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  /* */
+  font-family: monospace;
+  font-weight: 500;
+  /* */
+  border-radius: 9999px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(148, 148, 148, 0.308);
+  color: white;
+
+  /* ODD SPAN CONTENT ARE NUMBERS */
+  & > span:nth-child(odd):before {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* FIRST SPAN :BEFORE ELEMENT*/
+.debug-screen-pill > span:nth-of-type(1):before {
+  content: "123";
+}
+
+/* THIRD SPAN :BEFORE ELEMENT*/
+.debug-screen-pill > span:nth-of-type(3):before {
+  content: "321";
+}
+
+/* LAST SPAN :BEFORE ELEMENT */
+.debug-screen-pill > span:nth-of-type(4):before {
+  content: "XL";
+}
+
+/* THIRD SPAN, :AFTER ELEMENT */
+.debug-screen-pill > span:nth-of-type(3):after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 1px;
+  background: #242424;
+  transform: translateX(250%);
+}
+
+/* LAST SPAN */
+.debug-screen-pill > span:nth-of-type(4) {
+  padding-left: 0.5rem;
+}
