@@ -80,24 +80,3 @@ button:hover {
 /*  */
 /* 
 /*  */
-
-.popover-container {
-  position: fixed;
-  opacity: 0;
-}
-
-.popover-container:focus {
-  opacity: 1;
-}
-
-.popover {
-  height: 100px;
-  width: 100px;
-  background-color: var(--bg-1);
-  pointer-events: none;
-}
-
-#popover:focus ~ .popover-container {
-  opacity: 1;
-  transform: opacity 0.2s ease-out;
-}
